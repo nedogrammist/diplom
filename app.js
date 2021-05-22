@@ -28,18 +28,7 @@ app.post('/bookmarks', bookmarksController.store)
 app.get('/bookmarks', bookmarksController.index)
 app.post('/bookmarks/delete', bookmarksController.delete)
 
-app.post('/data', (req, res)=>{
-    mongoose.connect(url, (err, db)=>{
-        var collection = db.collection('spots');
-        var insertdata = {
-            name: req.body.name,
-            phone: req.body.phone
-        }
-        collection.insert(insertdata, (x, response)=>{
-            res.send(response);
-        })
-    })
-})
+
 
 app.listen(3210, ()=>{
     console.log('Server is active on port 3210');

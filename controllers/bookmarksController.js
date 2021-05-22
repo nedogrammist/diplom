@@ -17,6 +17,7 @@ module.exports = {
             ad_id
         })
         }
+        return res.send('Ok')
     },
 
     async index (req,res){
@@ -45,8 +46,9 @@ module.exports = {
         const {_id, user_id} = req.body
         console.log(req.body)
         await Bookmarks.deleteOne({ad_id:_id, user_id:user_id}, (err, obj)=>{
-          
-        console.log("1 bookmark deleted")
+            console.log("1 bookmark deleted")
+            return res.send('ok')  
+        
         })
         
       }

@@ -55,8 +55,9 @@ module.exports = {
     const {_id} = req.body
     console.log(req.body)
     await Ads.deleteOne({_id:_id}, (err, obj)=>{
-      
-    console.log("1 document deleted")
+      console.log("1 document deleted")
+      return res.send('ok')  
+    
     })
     
   }
